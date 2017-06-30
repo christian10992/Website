@@ -1,199 +1,399 @@
 doctype html
 html(lang='en')
   head
-    meta(name='viewport', content='initial-scale=1.0,maximum-scale=1,width=device-width')
-    meta(name='keywords', content="HTML,CSS,XML,JavaScript,Robert James Gabriel,award winning, php , experienced,Galen, angular, HTML, HTML5, JavaScript, Node. j's, PHP and SQL developer,golang,web design ")
-    meta(name='description', content='Robert James Gabriel is a web engineer currently at Teamwork.com.He has also written papers on Learning Web Accessibility, Design and Machine Learning and Ux issues')
-    meta(name='author', content='Robert James Gabriel')
-    meta(name='twitter:card', content='summary')
-    meta(name='twitter:description', content='Robert James Gabriel is a web engineer currently at Teamwork.com.He has also written papers on Learning Web Accessibility, Design and Machine Learning and Ux issue')
-    meta(property='og:image', content='./assets/img/me/me.png')
-    meta(name='twitter:image:src', content='./assets/img/me/me.png')
-    meta(name='twitter:creator', content='@RobertJGabriel')
-    meta(name='twitter:url', content='http://robertgabriel.ninja')
-    meta(name='twitter:title', content='Robert James Gabriel')
-    meta(name='theme-color', content='#eb298c')
-    title Robert James Gabriel: Software engineer.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Freelancer - Start Bootstrap Theme
     link(href='./assets/css/vendor.min.css', rel='stylesheet')
     link(href='./assets/css/app.min.css', rel='stylesheet')
-    link(rel='icon', type='image/png', href='./assets/img/core/favicon.png')
-  body
-    include ./layout/header.pug
-
-    .container-fluid.baseheader
-      .row
-        .col-sm-3
-        .col-sm-6.wrapper
-          .row
-            .me
-            h1.text-center
-              b Robert James Gabriel
-            h2.text-center
-              | Software engineer
+  body#page-top.index
+    #skipnav
+      a(href='#maincontent') Skip to main content
+    // Navigation
+    nav#mainNav.navbar.navbar-default.navbar-fixed-top.navbar-custom
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            |  Menu 
+            i.fa.fa-bars
+          a.navbar-brand(href='#page-top') Start Bootstrap
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href='#page-top')
+            li.page-scroll
+              a(href='#portfolio') Portfolio
+            li.page-scroll
+              a(href='#about') About
+            li.page-scroll
+              a(href='#contact') Contact
+        // /.navbar-collapse
+      // /.container-fluid
+    // Header
+    header
+      #maincontent.container(tabindex='-1')
+        .row
+          .col-lg-12
+            img.img-responsive(src='img/profile.png', alt='')
+            .intro-text
+              h1.name Start Bootstrap
+              hr.star-light
+              span.skills Web Developer - Graphic Artist - User Experience Designer
+    // Portfolio Grid Section
+    section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Portfolio
+            hr.star-primary
+        .row
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/cabin.png', alt='Cabin')
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal2', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/cake.png', alt='Slice of cake')
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal3', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/circus.png', alt='Circus tent')
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal4', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/game.png', alt='Game controller')
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal5', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/safe.png', alt='Safe')
+          .col-sm-4.portfolio-item
+            a.portfolio-link(href='#portfolioModal6', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='img/portfolio/submarine.png', alt='Submarine')
+    // About Section
+    section#about.success
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 About
+            hr.star-light
+        .row
+          .col-lg-4.col-lg-offset-2
+            p
+              | Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.
+          .col-lg-4
+            p
+              | Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!
+          .col-lg-8.col-lg-offset-2.text-center
+            a.btn.btn-lg.btn-outline(href='#')
+              i.fa.fa-download
+              |  Download Theme
+    // Contact Section
+    section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Contact Me
+            hr.star-primary
+        .row
+          .col-lg-8.col-lg-offset-2
+            // To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
+            // The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
+            form#contactForm(name='sentMessage', novalidate='')
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label(for='name') Name
+                  input#name.form-control(type='text', placeholder='Name', required='', data-validation-required-message='Please enter your name.')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label(for='email') Email Address
+                  input#email.form-control(type='email', placeholder='Email Address', required='', data-validation-required-message='Please enter your email address.')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label(for='phone') Phone Number
+                  input#phone.form-control(type='tel', placeholder='Phone Number', required='', data-validation-required-message='Please enter your phone number.')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label(for='message') Message
+                  textarea#message.form-control(rows='5', placeholder='Message', required='', data-validation-required-message='Please enter a message.')
+                  p.help-block.text-danger
               br
-              | Working at
-              a(href='https://www.teamwork.com') Teamwork.com
-
+              #success
+              .row
+                .form-group.col-xs-12
+                  button.btn.btn-success.btn-lg(type='submit') Send
+    // Footer
+    footer.text-center
+      .footer-above
+        .container
           .row
-            .col-sm-2.col-md-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/core/favicon.png', height='120', width='120', alt='me')
-            .col-sm-10
-              h4.subTitle
-                b  About Me
+            .footer-col.col-md-4
+              h3 Location
               p
-                | Robert Gabriel is a Software Engineer at Teamwork.com working with the Teamwork Projects team on importers for the product also leading the online and internal web sites team to 100% scalable and cutting edge. He is also develops/helps out on several open-source projects including Robin, Yettii, Xbox DVR Open Dyslexia (which has 60,000 uses) and upcoming Jarvis.
-                | Robert is also the author of several published papers including Problems Posed by Ad-blockers and Web Accessibility and OpenDyslexia.
-                | Studied computer science at Cork Institute of Technology in Ireland and graduated at the top of my class.
-          .row
-            .col-sm-2.col-md-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/bubbles/laptop.png', height='120', width='120', alt='github')
-            .col-sm-10
-              h4.subTitle
-                b  Current Projects
-              p
-                | I'm currently working on something like
-                a(href="https://github.com/Yeti-Ai") Jarvis
-                | ,
-                a(href='https://chrome.google.com/webstore/detail/opendyslexic/cdnapgfjopgaggbmfgbiinmmbdcglnam?hl=en') Open Dyslexic
-                | ,
-                a(href='http://www.projectbird.com/robin.html') Robin
-                | ,
-                a(href='https://github.com/FezVrasta/bootstrap-material-design') Material Bootstrap
-                | and Teamwork Projects.
-
-          .row
-            .col-sm-2.col-md-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/bubbles/helmet.png', height='120', width='120', alt='Skills')
-            .col-sm-10
-              h4.subTitle
-                b  Skills
-              table.skills
-                tr
-                  td HTML5
-                  td PHP5
-                  td CSS3, Less & Sass
-                tr
-                  td Knockout.js
-                  td Angular.js
-                  td Bootstrap
-                tr
-                  td GOLANG
-                  td Backbone.js
-                  td Require.js
-                tr
-                  td Java
-                  td Node
-                  td Alorgthims
-                tr
-                  td Performace
-                  td Coffeescript
-                  td SQL
-                tr
-                  td Database Design
-                  td Gulp
-                  td API Design
-                tr
-                  td ES6
-                  td Javascript
-                  td Coldfusion
-                tr
-                  td HCI
-                  td Object Oriented
-                  td Git
-                tr
-                  td Handlebars.js
-                  td User experience
-                  td Ux Design
-                tr
-                  td Jade
-                  td Coldfusion
-                  td Api Design
-                tr
-                  td Accessibility Design
-                  td NoSQL
-          .row
-            .col-sm-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/bubbles/pencil.png', height='120', width='120', alt='blog')
-            .col-sm-10
-              h4.subTitle
-                b  Talks
-              p
-                | While doing research and odd thoughts on code, I store them on my blog which is
-                a(href='/talks') here
-                | . I also do a lot of talks and presentations on machine learning and HCI/Ux
-          .row
-            .col-sm-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/bubbles/heart.png', height='120', width='120', alt='What I Have Made')
-            .col-sm-10
-              h4.subTitle
-                b  Things I've made
-              p
-                a(href='') Yeti Jarvis
-                | ,
-                a(href='https://github.com/Projectbird/Helperbird-Dyslexia') Helperbird
-                | ,
-                a(href='https://github.com/RobertJGabriel/Xbox-One-Gamertag-Videos') Xbox One Gamertag Videos
-                | ,
-                a(href='http://www.projectbird.com/robin.html') Robin
-                | ,
-                a(href='https://github.com/Projectbird/MrScraper') Mr Scrapper
-                | ,
-                a(href='https://chrome.google.com/webstore/detail/opendyslexic/cdnapgfjopgaggbmfgbiinmmbdcglnam?hl=en') Open Dyslexic
-                | ,
-                a(href='https://github.com/yvasiyarov/swagger') Swagger for Golang.
-                | are some of my projects. You can find more on
-                a(href='https://github.com/RobertJGabriel')  GitHub.
-          .row
-            .col-sm-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/awards/awards4.png', height='120', width='120', alt='Awards')
-            .col-sm-10
-              h4.subTitle
-                b  Awards
-              ol
-                li Imagine Cup Innovation National Runner Up
-                li Imagine Cup Innovation National Runner Up X2
-                li Microsoft Ireland Imagine Cup Finalist X2
-                li Hatchery Scholarship For Innovation
-                li Abbott Award For Network Code
-                li The Most Technically Innovative Award CIT
-                li Bt Young Scientist Award: Maths and Algorithms
-                li Bt Young Scientist Award: Technology 2nd Place
-                li Sci-Fest Award: For Programming
-                li Sci-Fest Awards X4
-                li HEANet Special Award For Network and Scaling code
-                li Avaya Communications Special Award
-                li Junior Spiders Awards: All Ireland Title
-                li Junior Spider Awards: Best Application
-                li Teamwork Hackathon 2015: Runner Up
-                li Young Social Innovators All Ireland Title
-                li 1 of 5 students to go to a private Google open day
-                li Overall Best Poster 2016 - Department of Computing Cork Institute of Technology
-                li
-                  | Best overall Final Year Project & Best use of open source tools - Department of Computing Cork Institute of Technology
-                li Everyday Excellence Award - Teamwork.com
-                li Scholar award for finishing top in my year with a G.P.A of 3.9
-                li Above and Beyond the Call of Duty - Teamwork.com
-                li Above and Beyond the Call of Duty (Novemeber 2016) - Teamwork.com
-                li Above and Beyond the Call of Duty (Decemeber 2016) - Teamwork.com
-                li Everyday excellent award (Decemeber 2016) - Teamwork.com
-                li Several School awards
-              p
-                | Those were some of the awards.
+                | 3481 Melrose Place
                 br
-                | Offered interviews with the likes of Google and significant other companies.
-          #contact.row
-            .col-sm-2
-              img.center-block.img-circle.img-responsive(src='./assets/img/icons/bubbles/letter.png', height='120', width='120', alt='Contacts')
-            .col-sm-10
-              h4.subTitle
-                b  Contact
+                | Beverly Hills, CA 90210
+            .footer-col.col-md-4
+              h3 Around the Web
+              ul.list-inline
+                li
+                  a.btn-social.btn-outline(href='#')
+                    span.sr-only Facebook
+                    i.fa.fa-fw.fa-facebook
+                li
+                  a.btn-social.btn-outline(href='#')
+                    span.sr-only Google Plus
+                    i.fa.fa-fw.fa-google-plus
+                li
+                  a.btn-social.btn-outline(href='#')
+                    span.sr-only Twitter
+                    i.fa.fa-fw.fa-twitter
+                li
+                  a.btn-social.btn-outline(href='#')
+                    span.sr-only Linked In
+                    i.fa.fa-fw.fa-linkedin
+                li
+                  a.btn-social.btn-outline(href='#')
+                    span.sr-only Dribble
+                    i.fa.fa-fw.fa-dribbble
+            .footer-col.col-md-4
+              h3 About Freelancer
               p
-                | What to contact me about work?, speaking at an event?, spending me free stuff to show off (I love stickers) or just a chat well my email is
-                a(href='mailto:robert_gabriel@outlook.com') robert_gabriel@outlook.com
+                | Freelance is a free to use, open source Bootstrap theme created by 
+                a(href='http://startbootstrap.com') Start Bootstrap
                 | .
-        .col-sm-3
-    include ./layout/modal.pug
-    footer
-      include ./layout/footer.pug
-    script(src='./assets/js/vendor.min.js', defer='')
-    script(src='./assets/js/app.min.js', defer='')
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              | Copyright © Your Website 2016
+    // Scroll to Top Button (Only visible on small and extra-small screen sizes)
+    .scroll-top.page-scroll.hidden-sm.hidden-xs.hidden-lg.hidden-md
+      a.btn.btn-primary(href='#page-top')
+        i.fa.fa-chevron-up
+    // Portfolio Modals
+    #portfolioModal1.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/cabin.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    #portfolioModal2.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/cake.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    #portfolioModal3.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/circus.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    #portfolioModal4.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/game.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    #portfolioModal5.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/safe.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    #portfolioModal6.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-content
+        .close-modal(data-dismiss='modal')
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 Project Title
+                hr.star-primary
+                img.img-responsive.img-centered(src='img/portfolio/submarine.png', alt='')
+                p
+                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
+                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                ul.list-inline.item-details
+                  li
+                    | Client:
+                    strong
+                      a(href='http://startbootstrap.com') Start Bootstrap
+                  li
+                    | Date:
+                    strong
+                      a(href='http://startbootstrap.com') April 2014
+                  li
+                    | Service:
+                    strong
+                      a(href='http://startbootstrap.com') Web Development
+                button#btnSubmit.btn.btn-default(type='button', data-dismiss='modal')
+                  i.fa.fa-times
+                  |  Close
+    // jQuery
+    script(src='vendor/jquery/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    // Contact Form JavaScript
+    script(src='js/jqBootstrapValidation.js')
+    script(src='js/contact_me.js')
+    // Theme JavaScript
+    script(src='js/freelancer.min.js')

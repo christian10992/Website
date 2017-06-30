@@ -20,6 +20,8 @@ uncss = require('gulp-uncss')
 imagemin = require('gulp-imagemin')
 watch = require('gulp-watch')
 csscomb = require('gulp-csscomb')
+connect = require 'gulp-connect'
+
 
 gulp.task 'vendor_css', ->
     gulp.src([
@@ -40,19 +42,22 @@ gulp.task 'vendor_css', ->
     .pipe gulp.dest('./docs/assets/css')
     return
 
+    
+gulp.task 'connect', ->
+  connect.server({
+      root: 'docs'
+      livereload: true
+  }
+  )
+  return
 
 gulp.task 'app_css', ->
     gulp.src([
-        './assets/css/app/reset.sass'
-        './assets/css/app/app.sass'
-        './assets/css/app/layout.sass'
-        './assets/css/app/material.sass'
-        './assets/css/app/menu.sass'
-        './assets/css/app/gallery.sass'
-        './assets/css/app/story.sass'
-        './assets/css/app/box.sass'
+        './assets/css/app/variables.less'
+        './assets/css/app/mixins.less'
+        './assets/css/app/layout.less'
         ])
-    .pipe(sass().on('error', sass.logError))
+    .pipe(less())
     .pipe(concatCss("app.css"))
     .pipe(csscomb())
     .pipe(minifyCSS())
@@ -81,7 +86,6 @@ gulp.task 'vendor_js', ->
         'assets/js/vendor/jquery.js',
         'assets/js/vendor/tether.js',
         'assets/js/vendor/bootstrap.min.js',
-        'assets/js/vendor/material.js',
         'assets/js/vendor/ripples.js',
         'assets/js/vendor/cheet.min.js'
         ]
@@ -135,6 +139,7 @@ gulp.task 'html', ->
         after: 'Finished!'
         showChange: true))
     .pipe(gulp.dest('./docs'))
+    .pipe connect.reload()
     return
 
 
